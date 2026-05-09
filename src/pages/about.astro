@@ -1,0 +1,117 @@
+---
+import ContactCTA from '../components/ContactCTA.astro';
+import Hero from '../components/Hero.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="About | Mommy Mommyson" description="About Daisy Larios and Dudes">
+	<div class="stack gap-20">
+		<main class="wrapper about">
+			<Hero
+				title="About"
+				tagline="Thanks for stopping by. Read below about dude mommy and how awesome dudes make mommy Babies too."
+			>
+				<img
+					width="1553"
+					height="873"
+					src="/assets/IMG_5776.jpeg"
+					alt="Mommy in Seattle with Mommy and bunny mustache."
+				/>
+			</Hero>
+
+			<section>
+				<h2 class="section-title">Background</h2>
+				<div class="content">
+					<p>
+						Mommy learn to be smart from dudes. Dudes pat on back since dude know we do good job
+						making mommy smart. Hard work pay off. Hehe. Dudes do mommy homework and help mommy get
+						diploma.Mommy now have to use diploma to get shiny coins for dudes. Good deal.
+					</p>
+					<p>
+						Mommy also learn to be athletic from dudes. Dudes have to train mommy all the time so she
+						get strong like dudes. After training, mommy want to be runner like dudes. She start training
+						with Beenie then she become good enough for dudes to start training. Good progress.
+					</p>
+					<p>
+						Then mommy want to become HR pro like dudes. She have alot to learn. Dudes have to teach the
+						way of payroll and dudes get fair 50% payroll increase for this task. Mommy still payroll baby
+						but dudes dedicated training because dudes love mommy. Dudes also teach babies the way but they
+						too small. They no learn and dudes miss out on coin. Hmmmph.
+					</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Best Quality</h2>
+				<div class="content">
+					<p>Unconditional love she have for dudes and babies. Daddy too.</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Second Best</h2>
+				<div class="content">
+					<p>Mommy always get dudes gift, coin, and cuddle with dudes. She take care of dudes. Dudes take care of mommy too. </p>
+				</div>
+			</section>
+		</main>
+
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<style>
+	.about {
+		display: flex;
+		flex-direction: column;
+		gap: 3.5rem;
+	}
+
+	img {
+		margin-top: 1.5rem;
+		border-radius: 1.5rem;
+		box-shadow: var(--shadow-md);
+	}
+
+	section {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		color: var(--gray-200);
+	}
+
+	.section-title {
+		grid-column-start: 1;
+		font-size: var(--text-xl);
+		color: var(--gray-0);
+	}
+
+	.content {
+		grid-column: 2 / 4;
+	}
+
+	.content :global(a) {
+		text-decoration: 1px solid underline transparent;
+		text-underline-offset: 0.25em;
+		transition: text-decoration-color var(--theme-transition);
+	}
+
+	.content :global(a:hover),
+	.content :global(a:focus) {
+		text-decoration-color: currentColor;
+	}
+
+	@media (min-width: 50em) {
+		.about {
+			display: grid;
+			grid-template-columns: 1fr 60% 1fr;
+		}
+
+		.about > :global(:first-child) {
+			grid-column-start: 2;
+		}
+
+		section {
+			display: contents;
+			font-size: var(--text-lg);
+		}
+	}
+</style>
